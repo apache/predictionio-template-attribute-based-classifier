@@ -49,7 +49,7 @@ class DataSource(val dsp: DataSourceParams)
             throw e
           }
         }
-      }
+      }.cache()
 
     new TrainingData(labeledPoints)
   }
