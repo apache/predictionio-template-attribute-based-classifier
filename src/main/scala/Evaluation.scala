@@ -13,17 +13,16 @@ import org.apache.spark.rdd.RDD
 case class Precision 
   extends AverageMetric[EmptyEvaluationInfo, 
       Query, PredictedResult, ActualResult] {
-  def header: String = "Precision"
-
   def calculate(query: Query, predicted: PredictedResult, actual: ActualResult)
   : Double = (if (predicted.label == actual.label) 1.0 else 0.0)
 }
 
-object PrecisionEvaluation 
-extends Evaluation with EngineParamsGenerator {
+object PrecisionEvaluation extends Evaluation {
   // Define Engine and Metric used in Evaluation
   engineMetric = (ClassificationEngine(), new Precision())
+}
 
+object EngineParamsList extends EngineParamsGenerator {
   // Define list of EngineParams used in Evaluation
 
   // First, we define the base engine params. It specifies the appId from which
@@ -39,11 +38,4 @@ extends Evaluation with EngineParamsGenerator {
     baseEP.copy(algorithmParamsList = Seq(("naive", AlgorithmParams(10.0)))),
     baseEP.copy(algorithmParamsList = Seq(("naive", AlgorithmParams(100.0)))),
     baseEP.copy(algorithmParamsList = Seq(("naive", AlgorithmParams(1000.0)))))
-}
-
-// To be replaced by "pio eval xxx"
-object Eval {
-  def main(args: Array[String]) {
-    Workflow.runEvaluation(PrecisionEvaluation, PrecisionEvaluation)
-  }
 }
