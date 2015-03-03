@@ -11,6 +11,10 @@ class PredictedResult(
   val label: Double
 ) extends Serializable
 
+class ActualResult(
+  val label: Double
+) extends Serializable
+
 object ClassificationEngine extends IEngineFactory {
   def apply() = {
     new Engine(
