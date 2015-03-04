@@ -6,6 +6,7 @@ import io.prediction.controller.Params
 import org.apache.spark.mllib.classification.NaiveBayes
 import org.apache.spark.mllib.classification.NaiveBayesModel
 import org.apache.spark.mllib.linalg.Vectors
+import org.apache.spark.SparkContext
 
 import grizzled.slf4j.Logger
 
@@ -19,7 +20,7 @@ class NaiveBayesAlgorithm(val ap: AlgorithmParams)
 
   @transient lazy val logger = Logger[this.type]
 
-  def train(data: PreparedData): NaiveBayesModel = {
+  def train(sc: SparkContext, data: PreparedData): NaiveBayesModel = {
     // MLLib NaiveBayes cannot handle empty training data.
     require(!data.labeledPoints.take(1).isEmpty,
       s"RDD[labeldPoints] in PreparedData cannot be empty." +
