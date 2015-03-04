@@ -6,7 +6,9 @@ Please refer to http://docs.prediction.io/templates/classification/quickstart/
 
 ## Versions
 
-### develop
+### v0.1.3
+
+- Add missing sample data set (data/data.txt)
 
 ### v0.1.2
 
