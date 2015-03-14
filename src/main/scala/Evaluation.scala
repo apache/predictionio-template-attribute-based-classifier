@@ -5,10 +5,11 @@ import io.prediction.controller.EmptyEvaluationInfo
 import io.prediction.controller.EngineParams
 import io.prediction.controller.EngineParamsGenerator
 import io.prediction.controller.Evaluation
-import io.prediction.controller.Workflow
+/*
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
 import org.apache.spark.rdd.RDD
+*/
 
 case class Accuracy
   extends AverageMetric[EmptyEvaluationInfo, Query, PredictedResult, ActualResult] {
