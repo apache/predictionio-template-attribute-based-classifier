@@ -6,6 +6,8 @@ import io.prediction.controller.Evaluation
 
 case class Precision(label: Double)
   extends OptionAverageMetric[EmptyEvaluationInfo, Query, PredictedResult, ActualResult] {
+  override def header: String = s"Precision(label = $label)"
+
   def calculate(query: Query, predicted: PredictedResult, actual: ActualResult)
   : Option[Double] = {
     if (predicted.label == label) {
@@ -23,5 +25,3 @@ case class Precision(label: Double)
 object PrecisionEvaluation extends Evaluation {
   engineMetric = (ClassificationEngine(), new Precision(label = 1.0))
 }
-
-
