@@ -5,21 +5,16 @@ import io.prediction.controller.EmptyEvaluationInfo
 import io.prediction.controller.EngineParams
 import io.prediction.controller.EngineParamsGenerator
 import io.prediction.controller.Evaluation
-import io.prediction.controller.Workflow
-import org.apache.spark.SparkContext
-import org.apache.spark.SparkContext._
-import org.apache.spark.rdd.RDD
 
-case class Precision 
-  extends AverageMetric[EmptyEvaluationInfo, 
-      Query, PredictedResult, ActualResult] {
+case class Accuracy
+  extends AverageMetric[EmptyEvaluationInfo, Query, PredictedResult, ActualResult] {
   def calculate(query: Query, predicted: PredictedResult, actual: ActualResult)
   : Double = (if (predicted.label == actual.label) 1.0 else 0.0)
 }
 
-object PrecisionEvaluation extends Evaluation {
+object AccuracyEvaluation extends Evaluation {
   // Define Engine and Metric used in Evaluation
-  engineMetric = (ClassificationEngine(), new Precision())
+  engineMetric = (ClassificationEngine(), new Accuracy())
 }
 
 object EngineParamsList extends EngineParamsGenerator {
@@ -29,7 +24,7 @@ object EngineParamsList extends EngineParamsGenerator {
   // the data is read, and a evalK parameter is used to define the
   // cross-validation.
   private[this] val baseEP = EngineParams(
-    dataSourceParams = DataSourceParams(appId = 18, evalK = Some(5)))
+    dataSourceParams = DataSourceParams(appId = 19, evalK = Some(5)))
 
   // Second, we specify the engine params list by explicitly listing all
   // algorithm parameters. In this case, we evaluate 3 engine params, each with
