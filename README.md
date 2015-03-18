@@ -6,6 +6,12 @@ Please refer to http://docs.prediction.io/templates/classification/quickstart/
 
 ## Versions
 
+### v0.1.4
+
+- Update Evaluation for PredictionIO 0.9.1
+
+NOTE: Require PredictionIO >= 0.9.1
+
 ### v0.1.3
 
 - Add missing sample data set (data/data.txt)
