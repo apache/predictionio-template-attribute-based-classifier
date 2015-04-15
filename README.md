@@ -6,6 +6,10 @@ Please refer to http://docs.prediction.io/templates/classification/quickstart/
 
 ## Versions
 
+### v0.2.0
+
+- Update for PredictionIO 0.9.2
+
 ### v0.1.4
 
 - Update Evaluation for PredictionIO 0.9.1
