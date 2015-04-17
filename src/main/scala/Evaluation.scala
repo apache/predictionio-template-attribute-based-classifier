@@ -24,7 +24,7 @@ object EngineParamsList extends EngineParamsGenerator {
   // the data is read, and a evalK parameter is used to define the
   // cross-validation.
   private[this] val baseEP = EngineParams(
-    dataSourceParams = DataSourceParams(appId = 19, evalK = Some(5)))
+    dataSourceParams = DataSourceParams(appName = "INVALID_APP_NAME", evalK = Some(5)))
 
   // Second, we specify the engine params list by explicitly listing all
   // algorithm parameters. In this case, we evaluate 3 engine params, each with
