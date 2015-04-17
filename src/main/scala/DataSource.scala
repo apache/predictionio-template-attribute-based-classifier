@@ -5,7 +5,7 @@ import io.prediction.controller.EmptyEvaluationInfo
 import io.prediction.controller.EmptyActualResult
 import io.prediction.controller.Params
 import io.prediction.data.storage.Event
-import io.prediction.data.storage.Storage
+import io.prediction.data.store.PEventStore
 
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
@@ -16,7 +16,7 @@ import org.apache.spark.mllib.linalg.Vectors
 import grizzled.slf4j.Logger
 
 case class DataSourceParams(
-  appId: Int,
+  appName: String,
   evalK: Option[Int]  // define the k-fold parameter.
 ) extends Params
 
@@ -28,9 +28,9 @@ class DataSource(val dsp: DataSourceParams)
 
   override
   def readTraining(sc: SparkContext): TrainingData = {
-    val eventsDb = Storage.getPEvents()
-    val labeledPoints: RDD[LabeledPoint] = eventsDb.aggregateProperties(
-      appId = dsp.appId,
+
+    val labeledPoints: RDD[LabeledPoint] = PEventStore.aggregateProperties(
+      appName = dsp.appName,
       entityType = "user",
       // only keep entities with these required properties defined
       required = Some(List("plan", "attr0", "attr1", "attr2")))(sc)
@@ -67,9 +67,8 @@ class DataSource(val dsp: DataSourceParams)
     // illustration purpose, a recommended approach is to factor out this logic
     // into a helper function and have both readTraining and readEval call the
     // helper.
-    val eventsDb = Storage.getPEvents()
-    val labeledPoints: RDD[LabeledPoint] = eventsDb.aggregateProperties(
-      appId = dsp.appId,
+    val labeledPoints: RDD[LabeledPoint] = PEventStore.aggregateProperties(
+      appName = dsp.appName,
       entityType = "user",
       // only keep entities with these required properties defined
       required = Some(List("plan", "attr0", "attr1", "attr2")))(sc)
@@ -98,15 +97,15 @@ class DataSource(val dsp: DataSourceParams)
     val evalK = dsp.evalK.get
     val indexedPoints: RDD[(LabeledPoint, Long)] = labeledPoints.zipWithIndex
 
-    (0 until evalK).map { idx => 
+    (0 until evalK).map { idx =>
       val trainingPoints = indexedPoints.filter(_._2 % evalK != idx).map(_._1)
       val testingPoints = indexedPoints.filter(_._2 % evalK == idx).map(_._1)
 
       (
         new TrainingData(trainingPoints),
         new EmptyEvaluationInfo(),
-        testingPoints.map { 
-          p => (new Query(p.features.toArray), new ActualResult(p.label)) 
+        testingPoints.map {
+          p => (new Query(p.features.toArray), new ActualResult(p.label))
         }
       )
     }
