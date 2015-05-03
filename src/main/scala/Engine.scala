@@ -1,6 +1,6 @@
 package org.template.classification
 
-import io.prediction.controller.IEngineFactory
+import io.prediction.controller.EngineFactory
 import io.prediction.controller.Engine
 
 class Query(
@@ -15,7 +15,7 @@ class ActualResult(
   val label: Double
 ) extends Serializable
 
-object ClassificationEngine extends IEngineFactory {
+object ClassificationEngine extends EngineFactory {
   def apply() = {
     new Engine(
       classOf[DataSource],

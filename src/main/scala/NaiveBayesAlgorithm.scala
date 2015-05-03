@@ -22,10 +22,10 @@ class NaiveBayesAlgorithm(val ap: AlgorithmParams)
 
   def train(sc: SparkContext, data: PreparedData): NaiveBayesModel = {
     // MLLib NaiveBayes cannot handle empty training data.
-    require(!data.labeledPoints.take(1).isEmpty,
-      s"RDD[labeldPoints] in PreparedData cannot be empty." +
+    require(data.labeledPoints.take(1).nonEmpty,
+      s"RDD[labeledPoints] in PreparedData cannot be empty." +
       " Please check if DataSource generates TrainingData" +
-      " and Preprator generates PreparedData correctly.")
+      " and Preparator generates PreparedData correctly.")
 
     NaiveBayes.train(data.labeledPoints, ap.lambda)
   }
