@@ -2,13 +2,10 @@ package org.template.classification
 
 import io.prediction.controller.PDataSource
 import io.prediction.controller.EmptyEvaluationInfo
-import io.prediction.controller.EmptyActualResult
 import io.prediction.controller.Params
-import io.prediction.data.storage.Event
 import io.prediction.data.store.PEventStore
 
 import org.apache.spark.SparkContext
-import org.apache.spark.SparkContext._
 import org.apache.spark.rdd.RDD
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.linalg.Vectors
@@ -60,7 +57,7 @@ class DataSource(val dsp: DataSourceParams)
   override
   def readEval(sc: SparkContext)
   : Seq[(TrainingData, EmptyEvaluationInfo, RDD[(Query, ActualResult)])] = {
-    require(!dsp.evalK.isEmpty, "DataSourceParams.evalK must not be None")
+    require(dsp.evalK.nonEmpty, "DataSourceParams.evalK must not be None")
 
     // The following code reads the data from data store. It is equivalent to
     // the readTraining method. We copy-and-paste the exact code here for
@@ -95,7 +92,7 @@ class DataSource(val dsp: DataSourceParams)
 
     // K-fold splitting
     val evalK = dsp.evalK.get
-    val indexedPoints: RDD[(LabeledPoint, Long)] = labeledPoints.zipWithIndex
+    val indexedPoints: RDD[(LabeledPoint, Long)] = labeledPoints.zipWithIndex()
 
     (0 until evalK).map { idx =>
       val trainingPoints = indexedPoints.filter(_._2 % evalK != idx).map(_._1)
@@ -105,7 +102,7 @@ class DataSource(val dsp: DataSourceParams)
         new TrainingData(trainingPoints),
         new EmptyEvaluationInfo(),
         testingPoints.map {
-          p => (new Query(p.features.toArray), new ActualResult(p.label))
+          p => (new Query(p.features(0), p.features(1), p.features(2)), new ActualResult(p.label))
         }
       )
     }

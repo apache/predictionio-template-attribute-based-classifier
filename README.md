@@ -6,6 +6,10 @@ Please refer to http://docs.prediction.io/templates/classification/quickstart/
 
 ## Versions
 
+### v0.3.1
+
+- modified query parameters to fit properties.
+
 ### v0.3.0
 
 - update for PredictionIO 0.9.2, including:

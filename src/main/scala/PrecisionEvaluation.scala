@@ -17,7 +17,7 @@ case class Precision(label: Double)
         Some(0.0)  // False positive
       }
     } else {
-      None  // Unrelated case for calcuating precision
+      None  // Unrelated case for calculating precision
     }
   }
 }
