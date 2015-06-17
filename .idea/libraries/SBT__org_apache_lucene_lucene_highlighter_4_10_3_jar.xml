@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.apache.lucene:lucene-highlighter:4.10.3:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.lucene/lucene-highlighter/jars/lucene-highlighter-4.10.3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.lucene/lucene-highlighter/docs/lucene-highlighter-4.10.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.lucene/lucene-highlighter/srcs/lucene-highlighter-4.10.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

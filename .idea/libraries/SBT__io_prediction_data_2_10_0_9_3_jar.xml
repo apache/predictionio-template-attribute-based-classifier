@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: io.prediction:data_2.10:0.9.3:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/io.prediction/data_2.10/jars/data_2.10-0.9.3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/io.prediction/data_2.10/docs/data_2.10-0.9.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/io.prediction/data_2.10/srcs/data_2.10-0.9.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

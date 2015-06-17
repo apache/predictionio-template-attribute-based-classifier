@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.mongodb:casbah-commons_2.10:2.7.2:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.mongodb/casbah-commons_2.10/jars/casbah-commons_2.10-2.7.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.mongodb/casbah-commons_2.10/docs/casbah-commons_2.10-2.7.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.mongodb/casbah-commons_2.10/srcs/casbah-commons_2.10-2.7.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

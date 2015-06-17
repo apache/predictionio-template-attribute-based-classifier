@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.scalikejdbc:scalikejdbc-core_2.10:2.2.6:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.scalikejdbc/scalikejdbc-core_2.10/jars/scalikejdbc-core_2.10-2.2.6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.scalikejdbc/scalikejdbc-core_2.10/docs/scalikejdbc-core_2.10-2.2.6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.scalikejdbc/scalikejdbc-core_2.10/srcs/scalikejdbc-core_2.10-2.2.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -31,7 +31,9 @@ class NaiveBayesAlgorithm(val ap: AlgorithmParams)
   }
 
   def predict(model: NaiveBayesModel, query: Query): PredictedResult = {
-    val label = model.predict(Vectors.dense(query.features))
+    val label = model.predict(Vectors.dense(
+      Array(query.attr0, query.attr1, query.attr2)
+    ))
     new PredictedResult(label)
   }
 

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: unmanaged-sources-and-docs">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.mesos/mesos/docs/mesos-0.21.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.mesos/mesos/srcs/mesos-0.21.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

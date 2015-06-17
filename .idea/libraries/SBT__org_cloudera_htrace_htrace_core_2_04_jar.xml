@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.cloudera.htrace:htrace-core:2.04:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.cloudera.htrace/htrace-core/jars/htrace-core-2.04.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.cloudera.htrace/htrace-core/docs/htrace-core-2.04-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.cloudera.htrace/htrace-core/srcs/htrace-core-2.04-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

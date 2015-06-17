@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.apache.hbase:hbase-client:0.98.5-hadoop2:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.hbase/hbase-client/jars/hbase-client-0.98.5-hadoop2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.hbase/hbase-client/docs/hbase-client-0.98.5-hadoop2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.hbase/hbase-client/srcs/hbase-client-0.98.5-hadoop2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
