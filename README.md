@@ -8,7 +8,12 @@ Please refer to http://docs.prediction.io/templates/classification/quickstart/
 
 ### v0.3.1
 
-- modified query parameters to fit properties.
+- Change query format from
+    `{ features: [2, 0, 0] }`
+  to
+    `{ "attr0":2, "attr1":0, "attr2":0 }`
+
+  Query class, DataSource readEval(), and algorithm's predict() is updated accordingly.
 
 ### v0.3.0
 
