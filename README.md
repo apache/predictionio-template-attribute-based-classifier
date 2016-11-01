@@ -2,9 +2,13 @@
 
 ## Documentation
 
-Please refer to http://docs.prediction.io/templates/classification/quickstart/
+Please refer to http://predictionio.incubator.apache.org/templates/classification/quickstart/
 
 ## Versions
+
+### v0.4.0
+
+Update for Apache PredictionIO 0.10.0-incubating
 
 ### v0.3.1
 
