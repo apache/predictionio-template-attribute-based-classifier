@@ -1,7 +1,7 @@
 package org.template.classification
 
-import io.prediction.controller.EngineFactory
-import io.prediction.controller.Engine
+import org.apache.predictionio.controller.EngineFactory
+import org.apache.predictionio.controller.Engine
 
 class Query(
   val attr0 : Double,
