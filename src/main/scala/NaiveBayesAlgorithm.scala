@@ -1,4 +1,4 @@
-package org.template.classification
+package org.example.classification
 
 import org.apache.predictionio.controller.P2LAlgorithm
 import org.apache.predictionio.controller.Params
