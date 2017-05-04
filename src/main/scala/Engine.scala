@@ -3,11 +3,13 @@ package org.example.classification
 import org.apache.predictionio.controller.EngineFactory
 import org.apache.predictionio.controller.Engine
 
-class Query(
-  val attr0 : Double,
-  val attr1 : Double,
-  val attr2 : Double
-) extends Serializable
+class Query extends Serializable{
+  var attrs: Seq[Double] = null
+  def this(attrs: Double*) {
+    this()
+    this.attrs = attrs
+  }
+}
 
 class PredictedResult(
   val label: Double
