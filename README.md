@@ -2,9 +2,16 @@
 
 ## Documentation
 
-Please refer to http://predictionio.incubator.apache.org/templates/classification/quickstart/
+Please refer to
+http://predictionio.incubator.apache.org/templates/classification/quickstart/
 
 ## Versions
+
+### v0.12.0-incubating
+
+- Bump version number to track PredictionIO version
+- Sets default build targets according to PredictionIO
+- Fix use of case class
 
 ### v0.11.0-incubating
 
