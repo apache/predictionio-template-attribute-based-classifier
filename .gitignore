@@ -1,5 +1,14 @@
+.DS_Store
 manifest.json
 pio.log
 /pio.sbt
 target/
-.idea
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IntelliJ
+*.iml
+.idea/
