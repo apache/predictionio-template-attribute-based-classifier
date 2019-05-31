@@ -8,6 +8,7 @@ import org.apache.predictionio.controller.Evaluation
 
 case class Accuracy()
   extends AverageMetric[EmptyEvaluationInfo, Query, PredictedResult, ActualResult] {
+  override
   def calculate(query: Query, predicted: PredictedResult, actual: ActualResult)
   : Double = (if (predicted.label == actual.label) 1.0 else 0.0)
 }
